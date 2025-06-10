@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Player de Música Interativo</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <!-- tela inicial -->
+    <div id="initial-screen" class="initial-screen">
+        <button id="start-btn" class="start-button">
+            <span class="play-icon">▶</span>
+            iniciar experiência
+        </button>
+    </div>
+
+    <!-- tela principal -->
+    <div id="main-screen" class="main-screen hidden">
+        <!-- player de música -->
+        <div class="music-player">
+            <div class="player-container">
+                <div class="player-info">
+                    <button id="play-pause-btn" class="play-btn">
+                        <span id="play-icon">▶</span>
+                    </button>
+                    <div class="song-info">
+                        <p class="song-title">EONA - Emotional Ambient Pop</p>
+                        <p class="artist">Rockot</p>
+                    </div>
+                </div>
+
+                <div class="player-controls">
+                    <span id="current-time" class="time">0:00</span>
+                    <input type="range" id="progress-bar" class="progress-bar" min="0" max="100" value="0">
+                    <span id="duration" class="time">0:00</span>
+                </div>
+
+                <div class="volume-control">
+                    <span class="volume-icon">🔊</span>
+                    <input type="range" id="volume-bar" class="volume-bar" min="0" max="100" value="70">
+                </div>
+            </div>
+        </div>
+
+        <!-- slides -->
+        <div class="content-container">
+            <div class="slide-gallery">
+                <div class="slide-container">
+                    <img id="slide-image" src="assets/slide1.jpg" alt="Paisagem" class="slide-image">
+                    <div class="slide-overlay">
+                        <button id="prev-btn" class="nav-btn prev-btn">‹</button>
+                        <button id="next-btn" class="nav-btn next-btn">›</button>
+                        <div class="slide-indicators">
+                            <span class="indicator active" data-slide="0"></span>
+                            <span class="indicator" data-slide="1"></span>
+                            <span class="indicator" data-slide="2"></span>
+                            <span class="indicator" data-slide="3"></span>
+                        </div>
+                        <div class="slide-info">
+                            <h3 id="slide-title">Paisagem Montanhosa</h3>
+                            <p id="slide-description">Belas montanhas com flores silvestres</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- texto -->
+            <div class="text-section">
+                <h2>Uma Jornada Musical e Visual</h2>
+                <div class="text-content">
+                    <p>
+                        Bem-vindo a uma experiência única que combina música ambiente relaxante com 
+                        paisagens deslumbrantes da natureza. Cada imagem foi cuidadosamente selecionada 
+                        para complementar a atmosfera musical, criando um momento de paz e contemplação.
+                    </p>
+                    <p>
+                        As paisagens mudam suavemente, como as notas da música, transportando você 
+                        através de montanhas majestosas, lagos serenos, cachoeiras cristalinas e 
+                        fiordes impressionantes. Deixe-se levar por esta sinfonia visual e sonora.
+                    </p>
+                    <p>
+                        Respire fundo, relaxe e permita que esta combinação harmoniosa de sons e 
+                        imagens acalme sua mente e renove suas energias. Este é o seu momento de 
+                        tranquilidade em meio ao dia agitado.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- audio -->
+    <audio id="audio-player" preload="metadata">
+        <source src="assets/music.mp3" type="audio/mpeg">
+        Seu navegador não suporta o elemento de áudio.
+    </audio>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+
