@@ -1,4 +1,4 @@
-/* Reset e configurações básicas */
+/* configurações básicas */
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +12,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Utilitários */
+/* utilitários */
 .hidden {
     display: none !important;
 }
 
-/* Tela inicial */
+/* tela inicial */
 .initial-screen {
     display: flex;
     align-items: center;
@@ -34,19 +34,18 @@ body {
     background: linear-gradient(45deg, #f9a8d4, #c084fc);
     border: none;
     border-radius: 50px;
-    color: #374151;
+    color: #ffffff;
     font-size: 1.5rem;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 10px 30px rgba(249, 168, 212, 0.4);
+    box-shadow: 0 10px 30px #ffffff;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
 }
-
 .start-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 15px 40px rgba(249, 168, 212, 0.6);
+    box-shadow: 0 15px 40px #ffffff;
 }
 
 .start-button:active {
@@ -60,7 +59,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, #fbbf24, #f472b6);
+    background: linear-gradient(45deg, #f9a8d4, #f472b6);
     opacity: 0;
     transition: opacity 0.3s ease;
     border-radius: 50px;
@@ -74,13 +73,13 @@ body {
     font-size: 2rem;
 }
 
-/* Animação de pulse */
+/* animação de pulse */
 @keyframes gentle-pulse {
     0%, 100% {
-        box-shadow: 0 10px 30px rgba(249, 168, 212, 0.4);
+        box-shadow: 0 10px 30px #f9a8d4;
     }
     50% {
-        box-shadow: 0 15px 40px rgba(249, 168, 212, 0.7);
+        box-shadow: 0 15px 40px #f9a8d4;
     }
 }
 
@@ -88,13 +87,13 @@ body {
     animation: gentle-pulse 3s ease-in-out infinite;
 }
 
-/* Tela principal */
+/* tela principal */
 .main-screen {
     min-height: 100vh;
     background: linear-gradient(135deg, #fdf2f8, #f3e8ff, #eff6ff);
 }
 
-/* Player de música */
+/* player de música */
 .music-player {
     background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(10px);
@@ -131,7 +130,7 @@ body {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 0 4px 15px rgba(249, 168, 212, 0.4);
+    box-shadow: 0 4px 15px #ffffff;
     transition: all 0.2s ease;
     color: #374151;
     font-size: 1.2rem;
@@ -139,7 +138,7 @@ body {
 
 .play-btn:hover {
     transform: scale(1.1);
-    box-shadow: 0 6px 20px rgba(249, 168, 212, 0.6);
+    box-shadow: 0 6px 20px #ffffff;
 }
 
 .song-info {
@@ -224,14 +223,14 @@ body {
     color: #6b7280;
 }
 
-/* Container de conteúdo */
+/* container de conteúdo */
 .content-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 2rem;
 }
 
-/* Galeria de slides */
+/* slides */
 .slide-gallery {
     margin-bottom: 3rem;
 }
@@ -333,7 +332,7 @@ body {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-/* Seção de texto */
+/* texto */
 .text-section {
     background: rgba(255, 255, 255, 0.6);
     backdrop-filter: blur(10px);
@@ -361,7 +360,7 @@ body {
     margin-bottom: 0;
 }
 
-/* Responsividade */
+/* responsividade */
 @media (max-width: 768px) {
     .player-container {
         flex-direction: column;

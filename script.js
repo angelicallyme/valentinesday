@@ -1,34 +1,49 @@
-// Dados dos slides
+// slides
 const slides = [
     {
-        image: 'assets/slide1.jpg',
-        title: 'Paisagem Montanhosa',
-        description: 'Belas montanhas com flores silvestres'
+        image: 'https://pbs.twimg.com/media/FNGQMzOVgAM-Ilz?format=jpg',
+        title: 'shuyuka',
+        description: 'yukari takeba & makoto yuki'
     },
     {
-        image: 'assets/slide2.jpg',
-        title: 'Lago Sereno',
-        description: 'Um lago tranquilo ao entardecer'
+        image: 'https://pbs.twimg.com/media/GNSgJ0NaYAARO2_.jpg',
+        title: 'hertamei',
+        description: 'the herta & ruan mei'
     },
     {
-        image: 'assets/slide3.jpg',
-        title: 'Cachoeira Outonal',
-        description: 'Cachoeira em meio à floresta de outono'
+        image: 'https://pbs.twimg.com/media/GLm_MVwboAAIlfz.jpg',
+        title: 'robinhill',
+        description: 'robin & boothill'
     },
     {
-        image: 'assets/slide4.jpg',
-        title: 'Fiorde Norueguês',
-        description: 'Paisagem deslumbrante da Noruega'
+        image: 'https://pbs.twimg.com/media/GctYAQLWQAAYk6x.jpg',
+        title: 'sunfugue',
+        description: 'sunday & fugue'
+    },
+    {
+        image: 'https://i.redd.it/45hpmom85t471.jpg',
+        title: 'zelink',
+        description: 'zelda & link'
+    },
+    {
+        image: 'https://i.pinimg.com/736x/37/09/7a/37097ae20dfdc4a161d8227bd1751d71.jpg',
+        title: 'sonamy',
+        description: 'sonic & amy'
+    },
+    {
+        image: 'https://pbs.twimg.com/media/Eo7mHHvXMAA_mYJ.jpg',
+        title: 'negitoro',
+        description: 'megurine luka & hatsune miku'
     }
 ];
 
-// Variáveis globais
+// variáveis globais
 let currentSlide = 0;
 let isPlaying = false;
 let slideInterval;
 let audioPlayer;
 
-// Elementos do DOM
+// elementos do DOM
 const initialScreen = document.getElementById('initial-screen');
 const mainScreen = document.getElementById('main-screen');
 const startBtn = document.getElementById('start-btn');
@@ -45,33 +60,33 @@ const prevBtn = document.getElementById('prev-btn');
 const nextBtn = document.getElementById('next-btn');
 const indicators = document.querySelectorAll('.indicator');
 
-// Inicialização
+// inicialização
 document.addEventListener('DOMContentLoaded', function() {
     audioPlayer = document.getElementById('audio-player');
     setupEventListeners();
     updateSlide();
 });
 
-// Event Listeners
+// event listeners
 function setupEventListeners() {
-    // Botão inicial
+    // botão inicial
     startBtn.addEventListener('click', startExperience);
     
-    // Controles do player
+    // controles do player
     playPauseBtn.addEventListener('click', togglePlayPause);
     progressBar.addEventListener('input', seekAudio);
     volumeBar.addEventListener('input', changeVolume);
     
-    // Controles dos slides
+    // controles dos slides
     prevBtn.addEventListener('click', previousSlide);
     nextBtn.addEventListener('click', nextSlide);
     
-    // Indicadores
+    // indicadores
     indicators.forEach((indicator, index) => {
         indicator.addEventListener('click', () => goToSlide(index));
     });
     
-    // Audio events
+    // audio events
     audioPlayer.addEventListener('loadedmetadata', updateDuration);
     audioPlayer.addEventListener('timeupdate', updateProgress);
     audioPlayer.addEventListener('ended', () => {
@@ -80,12 +95,12 @@ function setupEventListeners() {
     });
 }
 
-// Função para iniciar a experiência
+// iniciar a experiência
 function startExperience() {
     initialScreen.classList.add('hidden');
     mainScreen.classList.remove('hidden');
     
-    // Iniciar música
+    // iniciar música
     audioPlayer.play().then(() => {
         isPlaying = true;
         playIcon.textContent = '⏸';
@@ -95,7 +110,7 @@ function startExperience() {
     });
 }
 
-// Controles do player de música
+// controles do player de música
 function togglePlayPause() {
     if (isPlaying) {
         audioPlayer.pause();
@@ -140,11 +155,11 @@ function formatTime(seconds) {
     return `${minutes}:${secs.toString().padStart(2, '0')}`;
 }
 
-// Controles dos slides
+// controles dos slides
 function startSlideshow() {
     slideInterval = setInterval(() => {
         nextSlide();
-    }, 4000); // Muda slide a cada 4 segundos
+    }, 5000); // muda slide a cada 5 segundos
 }
 
 function stopSlideshow() {
@@ -171,23 +186,23 @@ function goToSlide(index) {
 function updateSlide() {
     const slide = slides[currentSlide];
     
-    // Atualizar imagem com fade
+    // atualizar imagem com fade
     slideImage.style.opacity = '0';
     
     setTimeout(() => {
         slideImage.src = slide.image;
         slideTitle.textContent = slide.title;
         slideDescription.textContent = slide.description;
-        slideImage.style.opacity = '1';
+        slideImage.style.opacity = '2';
     }, 300);
     
-    // Atualizar indicadores
+    // atualizar indicadores
     indicators.forEach((indicator, index) => {
         indicator.classList.toggle('active', index === currentSlide);
     });
 }
 
-// Configurar volume inicial
+// configurar volume inicial
 document.addEventListener('DOMContentLoaded', function() {
     setTimeout(() => {
         if (audioPlayer) {
